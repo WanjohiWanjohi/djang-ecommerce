@@ -63,5 +63,13 @@
 	</div>
 
 </div>
-
+<script>
+var form = document.getElementById('form')
+form.addEventListener('submit' , function(e){
+	e.preventDefault()
+	console.log('Form submitted ... ')
+	document.getElementById('form-button').classList.add('hidden');
+	document.getElementById('payment-info').classlist.remove('hidden');
+})
+</script>
 {% endblock content %}
