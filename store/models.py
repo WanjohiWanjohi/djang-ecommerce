@@ -28,8 +28,6 @@ class Order(models.Model):
 		complete = models.BooleanField(default=False)
 		transaction_id = models.CharField(max_length=100, null=True)
 
-		def __str__(self):
-				return str(self.id)
 		@property
 		def get_cart_total(self):
 				oderitems = self.orderitem_set.all()
@@ -58,7 +56,7 @@ class ShippingAddress(models.Model):
 		order = models.ForeignKey(Order, on_delete=models.SET_NULL , null=True)
 		address = models.CharField(max_length=200, null=False)
 		city = models.CharField(max_length=200, null=False)
-		state = models.CharField(max_length=200, null=False)
+		country = models.CharField(max_length=200, null=False)
 		zipcode = models.CharField(max_length=200, null=False)
 		date_added = models.DateTimeField(auto_now_add=True)
 
